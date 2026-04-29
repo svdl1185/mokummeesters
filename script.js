@@ -1,4 +1,4 @@
-const CONTACT_EMAIL = "info@mokummeesters.nl";
+const CONTACT_EMAIL = "Mokummeesters@gmail.com";
 
 const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector("#nav-menu");
@@ -25,11 +25,29 @@ signupForm?.addEventListener("submit", (event) => {
   const body = [
     "Nieuwe inschrijving via mokummeesters.nl",
     "",
-    `E-mailadres: ${data.get("email")}`,
-    `Leeftijd kind: ${data.get("leeftijd")}`,
+    `Naam kind: ${data.get("naamKind")}`,
+    `Geboortedatum: ${data.get("geboortedatum")}`,
+    `Basisschool: ${data.get("basisschool") || "-"}`,
     "",
-    "Bericht of vraag:",
-    String(data.get("bericht") || "-"),
+    "Contactgegevens ouders:",
+    `E-mailadres: ${data.get("emailOuders")}`,
+    `Woonadres: ${data.get("woonadres")}`,
+    `Telefoonnummer: ${data.get("telefoonOuders") || "-"}`,
+    `Ander contact: ${data.get("anderContact") || "-"}`,
+    "",
+    "Schaakervaring:",
+    String(data.get("schaakervaring") || "-"),
+    "",
+    "Allergieen:",
+    String(data.get("allergieen") || "-"),
+    "",
+    "Dingen die we moeten weten over je kind:",
+    String(data.get("kindInfo") || "-"),
+    "",
+    "Overige informatie:",
+    String(data.get("overigeInfo") || "-"),
+    "",
+    `Nieuwsbrief: ${data.get("nieuwsbrief") || "Nee"}`,
   ].join("\n");
 
   const mailto = new URL(`mailto:${CONTACT_EMAIL}`);

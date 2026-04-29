@@ -14,7 +14,7 @@ Ga daarna naar `http://localhost:8000`.
 
 ## Formulier
 
-Het inschrijfformulier is geschikt voor GitHub Pages en opent een e-mailconcept naar `info@mokummeesters.nl`. Pas `CONTACT_EMAIL` in `script.js` aan als het definitieve adres anders wordt.
+Het inschrijfformulier is geschikt voor GitHub Pages en opent een e-mailconcept naar `Mokummeesters@gmail.com`. Pas `CONTACT_EMAIL` in `script.js` aan als het definitieve adres anders wordt.
 
 Automatisch mailen zonder e-mailprogramma kan niet met alleen GitHub Pages. Daarvoor is een formulierdienst nodig, zoals Formspree, Basin, Netlify Forms of een eigen backend.
 

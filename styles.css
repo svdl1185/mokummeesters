@@ -397,6 +397,18 @@ img {
   font-weight: 900;
 }
 
+.signup-form .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.signup-form .checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--sage-dark);
+}
+
 .signup-form input,
 .signup-form select,
 .signup-form textarea {

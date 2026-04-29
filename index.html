@@ -186,16 +186,56 @@
 
           <form class="signup-form" id="signup-form">
             <label>
-              E-mailadres
-              <input type="email" name="email" autocomplete="email" required />
+              Naam kind
+              <input name="naamKind" autocomplete="off" required />
             </label>
             <label>
-              Leeftijd kind
-              <input type="number" name="leeftijd" min="7" max="12" required />
+              Geboortedatum
+              <input type="date" name="geboortedatum" required />
+            </label>
+            <label>
+              Basisschool
+              <input name="basisschool" autocomplete="organization" />
+            </label>
+            <label>
+              E-mailadres ouders
+              <input type="email" name="emailOuders" autocomplete="email" required />
             </label>
             <label class="full">
-              Bericht of vraag
-              <textarea name="bericht" rows="4"></textarea>
+              Woonadres
+              <input name="woonadres" autocomplete="street-address" required />
+            </label>
+            <label>
+              Telefoonnummer ouders
+              <input name="telefoonOuders" autocomplete="tel" />
+            </label>
+            <label>
+              Eventueel ander contact
+              <input name="anderContact" />
+            </label>
+            <label class="full">
+              Schaakervaring
+              <textarea
+                name="schaakervaring"
+                rows="3"
+                placeholder="Bijvoorbeeld: beginner, schaakt thuis, zit op schaakles..."
+              ></textarea>
+            </label>
+            <label class="full">
+              Allergieën
+              <textarea name="allergieen" rows="3"></textarea>
+            </label>
+            <label class="full">
+              Dingen die we moeten weten over je kind
+              <textarea name="kindInfo" rows="3"></textarea>
+            </label>
+            <label class="full">
+              Overige informatie die voor ons goed is om te weten
+              <textarea name="overigeInfo" rows="3"></textarea>
+            </label>
+            <label class="checkbox full">
+              <input type="checkbox" name="nieuwsbrief" value="Ja" />
+              <span>Ik wil me inschrijven voor de nieuwsbrief</span>
             </label>
             <button class="button primary full" type="submit">Verstuur inschrijving</button>
             <p class="form-note" id="form-note">
