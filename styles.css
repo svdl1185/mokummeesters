@@ -484,6 +484,11 @@ img {
     min-height: 68px;
   }
 
+  .section.soft {
+    padding-inline-start: max(24px, env(safe-area-inset-left));
+    padding-inline-end: max(24px, env(safe-area-inset-right));
+  }
+
   .nav-toggle {
     display: inline-flex;
   }
