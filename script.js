@@ -50,11 +50,15 @@ signupForm?.addEventListener("submit", (event) => {
     `Nieuwsbrief: ${data.get("nieuwsbrief") || "Nee"}`,
   ].join("\n");
 
-  const mailto = new URL(`mailto:${CONTACT_EMAIL}`);
-  mailto.searchParams.set("subject", subject);
-  mailto.searchParams.set("body", body);
+  const mailto = [
+    `mailto:${CONTACT_EMAIL}`,
+    "?subject=",
+    encodeURIComponent(subject),
+    "&body=",
+    encodeURIComponent(body),
+  ].join("");
 
-  window.location.href = mailto.toString();
+  window.location.href = mailto;
   formNote.textContent =
     "Je e-mailprogramma is geopend. Controleer de gegevens en verstuur de mail om de inschrijving te voltooien.";
 });
