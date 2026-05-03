@@ -144,6 +144,7 @@ img {
 }
 
 .hero-copy h1,
+.section h1,
 .section h2 {
   margin: 0;
   color: var(--sage-dark);
@@ -272,6 +273,7 @@ img {
   align-items: start;
 }
 
+.section h1,
 .section h2 {
   font-size: clamp(2.2rem, 5vw, 4rem);
 }
@@ -313,6 +315,7 @@ img {
   padding: 28px;
 }
 
+.card h2,
 .card h3,
 .program-day h3 {
   margin: 0 0 10px;
