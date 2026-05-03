@@ -22,7 +22,7 @@
           Menu
         </button>
         <div class="nav-links" id="nav-menu">
-          <a href="#over">Over ons</a>
+          <a href="#over">Wie zijn wij?</a>
           <a href="#programma">Programma</a>
           <a href="#locatie">Locatie</a>
           <a href="#inschrijven">Inschrijven</a>
@@ -51,11 +51,7 @@
             </div>
             <div>
               <dt>Tijd</dt>
-              <dd>09.00-16.30</dd>
-            </div>
-            <div>
-              <dt>Kosten</dt>
-              <dd>EUR 415 voor 5 dagen</dd>
+              <dd>08.30-16.00</dd>
             </div>
           </dl>
         </div>
@@ -79,7 +75,7 @@
 
       <section class="section split" id="over">
         <div>
-          <p class="eyebrow">Wie zijn Mokum Meesters?</p>
+          <p class="eyebrow">Wie zijn wij?</p>
           <h2>Opgericht door Tim en Tessa</h2>
           <p>
             Mokum Meesters is opgericht door Tim en Tessa, beiden ouders die elke
@@ -179,8 +175,8 @@
             </p>
             <ul class="check-list">
               <li>Voor kinderen van 7 t/m 12 jaar</li>
-              <li>Maandag t/m vrijdag van 09.00 tot 16.30</li>
-              <li>EUR 415 per kind voor vijf dagen</li>
+              <li>Maandag t/m vrijdag van 08.30 tot 16.00</li>
+              <li>EUR 399 per kind voor vijf dagen</li>
             </ul>
           </div>
 
@@ -191,11 +187,15 @@
             </label>
             <label>
               Geboortedatum
-              <input type="date" name="geboortedatum" required />
+              <input type="date" name="geboortedatum" min="2014-01-01" max="2019-12-31" required />
             </label>
             <label>
               Basisschool
               <input name="basisschool" autocomplete="organization" />
+            </label>
+            <label>
+              Schaakclub
+              <input name="schaakclub" autocomplete="organization" />
             </label>
             <label>
               E-mailadres ouders

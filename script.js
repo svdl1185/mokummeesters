@@ -4,6 +4,7 @@ const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector("#nav-menu");
 const signupForm = document.querySelector("#signup-form");
 const formNote = document.querySelector("#form-note");
+const birthDateInput = signupForm?.querySelector('input[name="geboortedatum"]');
 
 navToggle?.addEventListener("click", () => {
   const isOpen = navMenu?.classList.toggle("is-open") ?? false;
@@ -20,6 +21,11 @@ navMenu?.addEventListener("click", (event) => {
 signupForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  if (birthDateInput && !birthDateInput.checkValidity()) {
+    birthDateInput.reportValidity();
+    return;
+  }
+
   const data = new FormData(signupForm);
   const subject = "Inschrijving Mokum Meesters";
   const body = [
@@ -28,6 +34,7 @@ signupForm?.addEventListener("submit", (event) => {
     `Naam kind: ${data.get("naamKind")}`,
     `Geboortedatum: ${data.get("geboortedatum")}`,
     `Basisschool: ${data.get("basisschool") || "-"}`,
+    `Schaakclub: ${data.get("schaakclub") || "-"}`,
     "",
     "Contactgegevens ouders:",
     `E-mailadres: ${data.get("emailOuders")}`,
@@ -61,4 +68,16 @@ signupForm?.addEventListener("submit", (event) => {
   window.location.href = mailto;
   formNote.textContent =
     "Je e-mailprogramma is geopend. Controleer de gegevens en verstuur de mail om de inschrijving te voltooien.";
+});
+
+birthDateInput?.addEventListener("input", () => {
+  birthDateInput.setCustomValidity("");
+
+  if (!birthDateInput.validity.rangeUnderflow && !birthDateInput.validity.rangeOverflow) {
+    return;
+  }
+
+  birthDateInput.setCustomValidity(
+    "Inschrijven kan alleen voor kinderen geboren tussen 2014 en 2019.",
+  );
 });
