@@ -304,7 +304,7 @@ img {
 .card,
 .program-day,
 .signup-form,
-.photo-placeholder {
+.photo-card {
   border: 1px solid var(--line);
   border-radius: 28px;
   background: rgba(255, 253, 247, 0.88);
@@ -343,17 +343,16 @@ img {
   font-weight: 900;
 }
 
-.photo-placeholder {
-  display: grid;
+.photo-card {
   min-height: 360px;
-  place-items: center;
-  padding: 30px;
-  color: var(--sage-dark);
-  font-weight: 900;
-  text-align: center;
-  background:
-    linear-gradient(135deg, rgba(95, 127, 102, 0.2), rgba(237, 155, 50, 0.2)),
-    var(--paper);
+  overflow: hidden;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
 }
 
 .signup {
@@ -451,6 +450,10 @@ img {
 
 .footer p {
   margin: 6px 0 0;
+}
+
+.footer-details {
+  font-size: 0.86rem;
 }
 
 .footer-links {
