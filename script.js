@@ -55,6 +55,7 @@ signupForm?.addEventListener("submit", (event) => {
     String(data.get("overigeInfo") || "-"),
     "",
     `Nieuwsbrief: ${data.get("nieuwsbrief") || "Nee"}`,
+    `Akkoord algemene voorwaarden en privacyverklaring: ${data.get("akkoordVoorwaarden") || "Nee"}`,
   ].join("\n");
 
   const mailto = [

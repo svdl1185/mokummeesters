@@ -401,14 +401,24 @@ img {
 
 .signup-form .checkbox {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
 .signup-form .checkbox input {
+  flex: 0 0 auto;
   width: 18px;
   height: 18px;
+  margin-top: 2px;
   accent-color: var(--sage-dark);
+}
+
+.signup-form .checkbox span {
+  line-height: 1.5;
+}
+
+.signup-form .checkbox a {
+  color: var(--sage-dark);
 }
 
 .signup-form input,
@@ -457,6 +467,8 @@ img {
 }
 
 .footer-links {
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 18px;
   font-weight: 900;
 }
@@ -529,5 +541,9 @@ img {
   .footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
   }
 }
