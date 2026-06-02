@@ -18,6 +18,12 @@ Het inschrijfformulier is geschikt voor GitHub Pages en opent een e-mailconcept 
 
 Automatisch mailen zonder e-mailprogramma kan niet met alleen GitHub Pages. Daarvoor is een formulierdienst nodig, zoals Formspree, Basin, Netlify Forms of een eigen backend.
 
+## Video
+
+De originele AanZet-video is te groot om direct in git of GitHub Pages te publiceren. GitHub weigert bestanden boven 100 MB en een video van honderden MB's laadt traag voor bezoekers.
+
+De site gebruikt daarom een YouTube-embed in `wie-zijn-wij.html`. De originele lokale MP4 staat in `.gitignore`, zodat die niet per ongeluk wordt meegecommit.
+
 ## Publiceren op GitHub Pages
 
 Zet GitHub Pages aan via `Settings` -> `Pages` -> `Deploy from a branch` -> `main` -> `/root`.

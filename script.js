@@ -5,6 +5,7 @@ const navMenu = document.querySelector("#nav-menu");
 const signupForm = document.querySelector("#signup-form");
 const formNote = document.querySelector("#form-note");
 const birthDateInput = signupForm?.querySelector('input[name="geboortedatum"]');
+const isEnglish = document.documentElement.lang === "en";
 
 navToggle?.addEventListener("click", () => {
   const isOpen = navMenu?.classList.toggle("is-open") ?? false;
@@ -27,35 +28,41 @@ signupForm?.addEventListener("submit", (event) => {
   }
 
   const data = new FormData(signupForm);
-  const subject = "Inschrijving Mokum Meesters";
+  const subject = isEnglish ? "Mokum Meesters registration" : "Inschrijving Mokum Meesters";
   const body = [
-    "Nieuwe inschrijving via mokummeesters.nl",
+    isEnglish
+      ? "New registration via mokummeesters.nl"
+      : "Nieuwe inschrijving via mokummeesters.nl",
     "",
-    `Naam kind: ${data.get("naamKind")}`,
-    `Geboortedatum: ${data.get("geboortedatum")}`,
-    `Basisschool: ${data.get("basisschool") || "-"}`,
-    `Schaakclub: ${data.get("schaakclub") || "-"}`,
+    `${isEnglish ? "Child's name" : "Naam kind"}: ${data.get("naamKind")}`,
+    `${isEnglish ? "Date of birth" : "Geboortedatum"}: ${data.get("geboortedatum")}`,
+    `${isEnglish ? "Primary school" : "Basisschool"}: ${data.get("basisschool") || "-"}`,
+    `${isEnglish ? "Chess club" : "Schaakclub"}: ${data.get("schaakclub") || "-"}`,
     "",
-    "Contactgegevens ouders:",
-    `E-mailadres: ${data.get("emailOuders")}`,
-    `Woonadres: ${data.get("woonadres")}`,
-    `Telefoonnummer: ${data.get("telefoonOuders") || "-"}`,
-    `Ander contact: ${data.get("anderContact") || "-"}`,
+    isEnglish ? "Parent contact details:" : "Contactgegevens ouders:",
+    `${isEnglish ? "Email address" : "E-mailadres"}: ${data.get("emailOuders")}`,
+    `${isEnglish ? "Home address" : "Woonadres"}: ${data.get("woonadres")}`,
+    `${isEnglish ? "Phone number" : "Telefoonnummer"}: ${data.get("telefoonOuders") || "-"}`,
+    `${isEnglish ? "Other contact" : "Ander contact"}: ${data.get("anderContact") || "-"}`,
     "",
-    "Schaakervaring:",
+    isEnglish ? "Chess experience:" : "Schaakervaring:",
     String(data.get("schaakervaring") || "-"),
     "",
-    "Allergieen:",
+    isEnglish ? "Allergies:" : "Allergieen:",
     String(data.get("allergieen") || "-"),
     "",
-    "Dingen die we moeten weten over je kind:",
+    isEnglish
+      ? "Things we should know about your child:"
+      : "Dingen die we moeten weten over je kind:",
     String(data.get("kindInfo") || "-"),
     "",
-    "Overige informatie:",
+    isEnglish ? "Other information:" : "Overige informatie:",
     String(data.get("overigeInfo") || "-"),
     "",
-    `Nieuwsbrief: ${data.get("nieuwsbrief") || "Nee"}`,
-    `Akkoord algemene voorwaarden en privacyverklaring: ${data.get("akkoordVoorwaarden") || "Nee"}`,
+    `${isEnglish ? "Newsletter" : "Nieuwsbrief"}: ${data.get("nieuwsbrief") || (isEnglish ? "No" : "Nee")}`,
+    `${isEnglish ? "Agreed to terms and privacy statement" : "Akkoord algemene voorwaarden en privacyverklaring"}: ${
+      data.get("akkoordVoorwaarden") || (isEnglish ? "No" : "Nee")
+    }`,
   ].join("\n");
 
   const mailto = [
@@ -67,8 +74,9 @@ signupForm?.addEventListener("submit", (event) => {
   ].join("");
 
   window.location.href = mailto;
-  formNote.textContent =
-    "Je e-mailprogramma is geopend. Controleer de gegevens en verstuur de mail om de inschrijving te voltooien.";
+  formNote.textContent = isEnglish
+    ? "Your email programme has opened. Check the details and send the email to complete the registration."
+    : "Je e-mailprogramma is geopend. Controleer de gegevens en verstuur de mail om de inschrijving te voltooien.";
 });
 
 birthDateInput?.addEventListener("input", () => {
@@ -79,6 +87,8 @@ birthDateInput?.addEventListener("input", () => {
   }
 
   birthDateInput.setCustomValidity(
-    "Inschrijven kan alleen voor kinderen geboren tussen 2014 en 2019.",
+    isEnglish
+      ? "Registration is only possible for children born between 2014 and 2019."
+      : "Inschrijven kan alleen voor kinderen geboren tussen 2014 en 2019.",
   );
 });
