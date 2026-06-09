@@ -36,6 +36,7 @@ signupForm?.addEventListener("submit", (event) => {
     "",
     `${isEnglish ? "Child's name" : "Naam kind"}: ${data.get("naamKind")}`,
     `${isEnglish ? "Date of birth" : "Geboortedatum"}: ${data.get("geboortedatum")}`,
+    `${isEnglish ? "Camp week" : "Kampweek"}: ${data.get("kampweek") || "-"}`,
     `${isEnglish ? "Primary school" : "Basisschool"}: ${data.get("basisschool") || "-"}`,
     `${isEnglish ? "Chess club" : "Schaakclub"}: ${data.get("schaakclub") || "-"}`,
     "",
