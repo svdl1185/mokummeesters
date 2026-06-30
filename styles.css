@@ -243,6 +243,59 @@ img {
   font-weight: 900;
 }
 
+.camp-dates {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.camp-dates-sep {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.week-full {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: rgba(180, 35, 24, 0.75);
+  opacity: 0.72;
+}
+
+.week-full strong,
+.vol-badge {
+  text-decoration: none;
+  color: #b42318;
+  font-size: 1.05em;
+  letter-spacing: 0.12em;
+}
+
+.week-full--large {
+  font-size: 1.08rem;
+}
+
+.week-full--large strong {
+  font-size: 1.35rem;
+}
+
+.signup .week-full,
+.signup .vol-badge {
+  color: #ffb4ab;
+}
+
+.signup .week-full {
+  text-decoration-color: rgba(255, 180, 171, 0.9);
+}
+
+.signup-form .radio-disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.signup-form .radio-disabled input {
+  cursor: not-allowed;
+}
+
 .hero-card {
   position: relative;
   border: 14px solid var(--paper);

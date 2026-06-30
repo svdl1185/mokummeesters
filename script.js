@@ -19,11 +19,19 @@ navMenu?.addEventListener("click", (event) => {
   }
 });
 
+function openMailto(mailto) {
+  const link = document.createElement("a");
+  link.href = mailto;
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
+
 signupForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if (birthDateInput && !birthDateInput.checkValidity()) {
-    birthDateInput.reportValidity();
+  if (!signupForm.reportValidity()) {
     return;
   }
 
@@ -66,18 +74,13 @@ signupForm?.addEventListener("submit", (event) => {
     }`,
   ].join("\n");
 
-  const mailto = [
-    `mailto:${CONTACT_EMAIL}`,
-    "?subject=",
-    encodeURIComponent(subject),
-    "&body=",
-    encodeURIComponent(body),
-  ].join("");
+  const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-  window.location.href = mailto;
+  openMailto(mailto);
+
   formNote.textContent = isEnglish
-    ? "Your email programme has opened. Check the details and send the email to complete the registration."
-    : "Je e-mailprogramma is geopend. Controleer de gegevens en verstuur de mail om de inschrijving te voltooien.";
+    ? `Your email programme should open now. Check the details and send the email to complete the registration. If nothing happens, email ${CONTACT_EMAIL} manually.`
+    : `Je e-mailprogramma zou nu moeten openen. Controleer de gegevens en verstuur de mail om de inschrijving te voltooien. Gebeurt er niets? Stuur de gegevens dan handmatig naar ${CONTACT_EMAIL}.`;
 });
 
 birthDateInput?.addEventListener("input", () => {

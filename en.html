@@ -72,7 +72,11 @@
             </div>
             <div>
               <dt>Dates</dt>
-              <dd>6-10 July and 13-17 July</dd>
+              <dd class="camp-dates">
+                <span class="week-full week-full--large">6-10 July <strong>FULL</strong></span>
+                <span class="camp-dates-sep">and</span>
+                <span>13-17 July</span>
+              </dd>
             </div>
             <div>
               <dt>Price</dt>
@@ -215,7 +219,7 @@
             <ul class="check-list">
               <li>For children aged 7 to 12</li>
               <li>Monday to Friday from 08.30 to 16.00</li>
-              <li>Dates: 6-10 July and 13-17 July</li>
+              <li>Dates: <span class="week-full">6-10 July <strong>FULL</strong></span> and 13-17 July</li>
               <li>EUR 399 per child for five days</li>
             </ul>
           </div>
@@ -231,12 +235,15 @@
             </label>
             <fieldset class="radio-group full">
               <legend>Camp week</legend>
-              <label class="radio">
-                <input type="radio" name="kampweek" value="6-10 July" required />
-                <span>6-10 July</span>
+              <label class="radio radio-disabled">
+                <input type="radio" name="kampweek" value="6-10 July" disabled />
+                <span>
+                  <span class="week-full">6-10 July</span>
+                  <strong class="vol-badge">FULL</strong>
+                </span>
               </label>
               <label class="radio">
-                <input type="radio" name="kampweek" value="13-17 July" />
+                <input type="radio" name="kampweek" value="13-17 July" required checked />
                 <span>13-17 July</span>
               </label>
             </fieldset>
