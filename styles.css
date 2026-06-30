@@ -250,6 +250,17 @@ img {
   gap: 0.35rem 0.5rem;
 }
 
+.camp-dates--stacked {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.camp-week {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
 .camp-dates-sep {
   color: var(--muted);
   font-weight: 800;
@@ -257,34 +268,38 @@ img {
 
 .week-full {
   text-decoration: line-through;
-  text-decoration-thickness: 3px;
-  text-decoration-color: rgba(180, 35, 24, 0.75);
-  opacity: 0.72;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(32, 50, 41, 0.45);
+  color: var(--muted);
+  font-weight: 800;
 }
 
-.week-full strong,
 .vol-badge {
-  text-decoration: none;
-  color: #b42318;
-  font-size: 1.05em;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18em 0.55em;
+  border-radius: 999px;
+  background: #b42318;
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 900;
   letter-spacing: 0.12em;
-}
-
-.week-full--large {
-  font-size: 1.08rem;
-}
-
-.week-full--large strong {
-  font-size: 1.35rem;
-}
-
-.signup .week-full,
-.signup .vol-badge {
-  color: #ffb4ab;
+  line-height: 1;
 }
 
 .signup .week-full {
-  text-decoration-color: rgba(255, 180, 171, 0.9);
+  text-decoration-color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.signup .vol-badge {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffd8d2;
+  border: 1px solid rgba(255, 216, 210, 0.45);
+}
+
+.signup-form .radio .camp-week {
+  line-height: 1.5;
 }
 
 .signup-form .radio-disabled {
